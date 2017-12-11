@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element audit="true" extends="x_42998_blog_manag_blog_management_table" label="Posts" max_length="40" name="x_42998_blog_manag_posts" sizeclass="6" type="collection">
+        <element attributes="pdf_cell_type=image" label="Image1" max_length="40" name="image" type="user_image"/>
+        <element attributes="pdf_cell_type=image" label="Image2" max_length="40" name="image3" type="user_image"/>
+        <element label="Input" max_length="40" name="input" type="journal_input"/>
+        <element label="Blog" max_length="32" name="u_blog" read_only="true" reference="x_42998_blog_manag_blog_management_table" type="reference"/>
+        <element label="Category" mandatory="true" max_length="32" name="u_category" reference="x_42998_blog_manag_category" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="All Comments" max_length="5000" name="u_comments" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Text" max_length="1000" name="u_comments_to_post" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Description" max_length="400" name="u_description" type="string"/>
+        <element label="Image" max_length="40" name="u_image" type="user_image"/>
+        <element label="New Journal" max_length="4000" name="u_journal_1" type="journal"/>
+        <element label="New Journal" max_length="4000" name="u_journal_2" type="journal"/>
+        <element attributes="edge_encryption_enabled=true" label="Post" max_length="400000" name="u_post_body" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Subject" mandatory="true" max_length="50" name="u_subject" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Tags" max_length="40" name="u_tags" type="string"/>
+        <element label="URL" max_length="1024" name="u_url" type="url"/>
+        <element label="Video" max_length="40" name="u_video" type="video"/>
+    </element>
+</database>

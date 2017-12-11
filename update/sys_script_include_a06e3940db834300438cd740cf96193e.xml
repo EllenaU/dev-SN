@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_42998_blog_manag.BlogMgmt_populate_number</api_name>
+        <client_callable>true</client_callable>
+        <description>find author and autopopulate his/her blog with number</description>
+        <name>BlogMgmt_populate_number</name>
+        <script><![CDATA[var BlogMgmt_populate_number = Class.create();
+BlogMgmt_populate_number.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	GetNumber: function(){
+		
+		var userid = this.getParameter('sysparm_userId');
+		var blg = new GlideRecord('x_42998_blog_manag_blog_management_table');
+		blg.addQuery('u_author', userid);
+		blg.query();
+		if (blg.next()){
+			var blogId = blg.sys_id;
+			var author = blg.u_author.sys_id;
+			var res= blogId + ',' + author;
+			return res;			
+
+		}else 
+			return false;
+		
+	
+}
+	
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-12-10 14:46:30</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a06e3940db834300438cd740cf96193e</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>BlogMgmt_populate_number</sys_name>
+        <sys_package display_value="Blog Management" source="x_42998_blog_manag">e5f30ce3db320300438cd740cf961934</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Blog Management">e5f30ce3db320300438cd740cf961934</sys_scope>
+        <sys_update_name>sys_script_include_a06e3940db834300438cd740cf96193e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-12-10 16:53:24</sys_updated_on>
+    </sys_script_include>
+</record_update>

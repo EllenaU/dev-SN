@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Category" max_length="40" name="x_42998_blog_manag_category" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Description" max_length="100" name="description" type="string"/>
+        <element attributes="pdf_cell_type=image" label="Picture" max_length="40" name="picture" type="user_image"/>
+        <element label="Icon" max_length="100" name="u_icon_1" type="icon"/>
+        <element label="Name" max_length="50" name="u_name" type="string"/>
+        <element label="Owner" max_length="32" name="u_owner" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="u_owner"/>
+        </index>
+    </element>
+</database>

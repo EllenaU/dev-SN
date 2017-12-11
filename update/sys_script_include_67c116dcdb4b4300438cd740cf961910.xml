@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_42998_blog_manag.RemoveAdvertisement</api_name>
+        <client_callable>false</client_callable>
+        <description>adhoc job for prohibit  any  advertisement mentioning</description>
+        <name>RemoveAdvertisement</name>
+        <script><![CDATA[var RemoveAdvertisement = Class.create();
+RemoveAdvertisement.prototype = {
+    initialize: function() {
+    },
+	checkComments: function(){
+		//check comments on form in all_comments variable
+			var na = '';
+		var newJournal= '';
+		var gr = new GlideRecord('x_42998_blog_manag_posts');
+		gr.query();
+		while (gr.next()){
+			na = gr.u_comments;
+			if(na !=''){
+				var notes = na.split("\n");
+				for (var i = 0; i < notes.length; i++) {
+					if (notes[i].toLowerCase().indexOf('advertisement') >= 0){
+						newJournal +='---!!!!--- Comment has been blocked due to our policy ' + '\n';
+					} else newJournal += notes[i];
+				}
+				gr.u_comments = newJournal;
+				gr.update();
+				newJournal = '';
+			}
+		}
+		//check comments in table x_42998_blog_manag_commentpost
+		var commentsTbl = new GlideRecord('x_42998_blog_manag_commentpost');
+		commentsTbl.query();
+		while(commentsTbl.next()){
+			if(commentsTbl.u_comment_body.toLowerCase().indexOf('advertisement') >= 0){
+				commentsTbl.u_comment_body = '---!!!!--- Comment has been blocked due to our policy ';
+				commentsTbl.update();
+			}
+			
+		}
+	},
+
+    type: 'RemoveAdvertisement'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-12-11 10:38:39</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>67c116dcdb4b4300438cd740cf961910</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>RemoveAdvertisement</sys_name>
+        <sys_package display_value="Blog Management" source="x_42998_blog_manag">e5f30ce3db320300438cd740cf961934</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Blog Management">e5f30ce3db320300438cd740cf961934</sys_scope>
+        <sys_update_name>sys_script_include_67c116dcdb4b4300438cd740cf961910</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-12-11 12:14:45</sys_updated_on>
+    </sys_script_include>
+</record_update>

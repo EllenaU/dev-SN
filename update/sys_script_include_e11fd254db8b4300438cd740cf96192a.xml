@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_42998_blog_manag.Insert_comments</api_name>
+        <client_callable>true</client_callable>
+        <description>collect all comments in one place for report</description>
+        <name>Insert_comments</name>
+        <script><![CDATA[var Insert_comments = Class.create();
+Insert_comments.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    	InsertCmt: function(){
+		
+		var from_user = this.getParameter('sysparm_from');
+		var comment_body = this.getParameter('sysparm_body');
+		var nn = this.getParameter('sysparm_number');
+			
+		var comment = new GlideRecord('x_42998_blog_manag_commentpost');
+		comment.initialize();
+		comment.u_comment_body = comment_body;
+		comment.u_from_user = from_user;
+		var gr = new GlideRecord('x_42998_blog_manag_posts');
+			gr.addQuery('number', nn);
+			gr.query();
+			if(gr.next()){
+				comment.u_post_commented = gr.sys_id;
+			}
+		
+	comment.insert();
+			return true;
+}
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-12-11 11:51:08</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>e11fd254db8b4300438cd740cf96192a</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Insert_comments</sys_name>
+        <sys_package display_value="Blog Management" source="x_42998_blog_manag">e5f30ce3db320300438cd740cf961934</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Blog Management">e5f30ce3db320300438cd740cf961934</sys_scope>
+        <sys_update_name>sys_script_include_e11fd254db8b4300438cd740cf96192a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-12-11 12:07:35</sys_updated_on>
+    </sys_script_include>
+</record_update>

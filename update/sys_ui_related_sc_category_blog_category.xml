@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_related sys_domain="global" table="sc_category" version="2" view="blog_category">
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Category - Blog_category" name="sc_category" related_list="NULL" sys_domain="global" view="dc27483fdbf60300438cd740cf9619e7">da474c7fdbf60300438cd740cf961953</list_id>
+            <order_by/>
+            <position>0</position>
+            <related_list>sc_category.parent</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-12-09 11:15:33</sys_created_on>
+            <sys_id>92474c7fdbf60300438cd740cf961954</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-12-09 11:15:33</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Category - Blog_category" name="sc_category" related_list="NULL" sys_domain="global" view="dc27483fdbf60300438cd740cf9619e7">da474c7fdbf60300438cd740cf961953</list_id>
+            <order_by/>
+            <position>1</position>
+            <related_list>sc_category_user_criteria_mtom.sc_category</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-12-09 11:15:33</sys_created_on>
+            <sys_id>96474c7fdbf60300438cd740cf961954</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-12-09 11:15:33</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Category - Blog_category" name="sc_category" related_list="NULL" sys_domain="global" view="dc27483fdbf60300438cd740cf9619e7">da474c7fdbf60300438cd740cf961953</list_id>
+            <order_by/>
+            <position>2</position>
+            <related_list>sc_category_user_criteria_no_mtom.sc_category</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-12-09 11:15:33</sys_created_on>
+            <sys_id>9a474c7fdbf60300438cd740cf961954</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-12-09 11:15:33</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list action="INSERT_OR_UPDATE">
+            <calculated_name>Category - Blog_category</calculated_name>
+            <filter/>
+            <name>sc_category</name>
+            <order_by/>
+            <position/>
+            <related_list/>
+            <sys_class_name>sys_ui_related_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-12-09 11:15:33</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>da474c7fdbf60300438cd740cf961953</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Category - Blog_category</sys_name>
+            <sys_package display_value="Blog Management" source="x_42998_blog_manag">e5f30ce3db320300438cd740cf961934</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Blog Management">e5f30ce3db320300438cd740cf961934</sys_scope>
+            <sys_update_name>sys_ui_related_sc_category_blog_category</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-12-09 11:15:33</sys_updated_on>
+            <sys_user/>
+            <view display_value="Blog_category" name="blog_category">dc27483fdbf60300438cd740cf9619e7</view>
+            <view_name/>
+        </sys_ui_related_list>
+    </sys_ui_related>
+</record_update>

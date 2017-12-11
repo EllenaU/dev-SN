@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="CommentPost" max_length="40" name="x_42998_blog_manag_commentpost" type="collection">
+        <element label="Comment" max_length="1000" name="u_comment_body" type="string"/>
+        <element label="From" max_length="32" name="u_from_user" reference="sys_user" reference_qual="roles=x_42998_blog_manag.user^EQ" reference_qual_condition="roles=x_42998_blog_manag.user^EQ" type="reference"/>
+        <element label="Post" max_length="32" name="u_post_commented" reference="x_42998_blog_manag_posts" type="reference"/>
+        <index name="index">
+            <element name="u_from_user"/>
+        </index>
+        <index name="index2">
+            <element name="u_post_commented"/>
+        </index>
+    </element>
+</database>
